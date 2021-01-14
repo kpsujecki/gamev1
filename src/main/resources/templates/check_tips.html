@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="common/header :: header"></div>
+</head>
+<body>
+
+<div th:replace="common/navbar :: navbar"></div>
+<div align="center">
+    <h1>Check tips</h1>
+    <br />
+    <form action="#" th:action="@{/admin/get_points}"
+          method="post">
+
+        <table border="0" cellpadding="10">
+            <tr>
+                <td>Match hastag:</td>
+                <td><input type="text" name="match" /></td>
+            </tr>
+            <tr>
+                <td>Day of the match:</td>
+                <td><input type="text" name="data" /></td>
+            </tr>
+            <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+            <tr>
+                <td>Who scored goals:</td>
+                <td><input type="text" name="whoscored" /></td>
+            </tr>
+            <tr>
+                <td>Homegoal:</td>
+                <td><input type="number" name="homegoal" /></td>
+            </tr>
+            <tr>
+                <td>Awaygoal:</td>
+                <td><input type="number" name="awaygoal" /></td>
+            </tr>
+            <tr>
+            <td>Homegoal half:</td>
+            <td><input type="number" name="homegoalhalf" /></td>
+            </tr>
+            <tr>
+                <td>Awaygoal half:</td>
+                <td><input type="number" name="awaygoalhalf" /></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="submit">Check</button> </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="common/header :: header"></div>
+</head>
+<body>
+<div th:replace="common/navbar :: navbar"></div>
+<div align="center">
+    <h1>Tip List</h1>
+    <a href="/admin/search">Create New Tips</a>
+    <br/><br/>
+    <table border="1" cellpadding="10">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Match</th>
+            <th>Player</th>
+            <th>HG</th>
+            <th>AG</th>
+            <th>HGH</th>
+            <th>AGH</th>
+            <th>Data</th>
+            <th>Created</th>
+            <th>Points</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="tip : ${tipList}">
+            <td th:text="${tip.id}">Tip ID</td>
+            <td th:text="${tip.name}">Name</td>
+            <td th:text="${tip.match}">Match</td>
+            <td th:text="${tip.player}">player</td>
+            <td th:text="${tip.homegoal}">hg</td>
+            <td th:text="${tip.awaygoal}">ag</td>
+            <td th:text="${tip.homegoalhalf}">hgh</td>
+            <td th:text="${tip.awaygoalhalf}">agh</td>
+            <td th:text="${tip.data}">Data</td>
+            <td th:text="${tip.created}">created</td>
+            <td th:if="${tip.point != null && #strings.isEmpty(tip.point.numberofpoints) == false}" th:text="${tip.point.numberofpoints}">Points</td>
+            <td>
+                <a th:href="@{'/admin/tip_edit/' + ${tip.id}}">Edit</a>
+                &nbsp;&nbsp;&nbsp;
+                <a th:href="@{'/admin/tip_delete/' + ${tip.id}}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="common/header :: header"></div>
+</head>
+<body>
+
+<div th:replace="common/navbar :: navbar"></div>
+<div align="center">
+    <h1>Edit Product</h1>
+    <br />
+    <form action="#" th:action="@{/admin/save_tip}" th:object="${tip}"
+          method="post">
+
+        <table border="0" cellpadding="10">
+            <tr>
+                <td>Tip ID:</td>
+                <td>
+                    <input type="text" th:field="*{id}" readonly="readonly" disabled/>
+                </td>
+            </tr>
+            <tr>
+                <td>Name:</td>
+                <td>
+                    <input type="text" th:field="*{name} " readonly="readonly"disabled/>
+                </td>
+            </tr>
+            <tr>
+                <td>Match:</td>
+                <td><input type="text" th:field="*{match}" readonly="readonly" disabled/></td>
+            </tr>
+            <tr>
+                <td>Data:</td>
+                <td><input type="text" th:field="*{data}" readonly="readonly" disabled/></td>
+            </tr>
+            <tr>
+                <td>Player:</td>
+                <td><input type="text" th:field="*{player}" /></td>
+            </tr>
+            <tr>
+                <td>Goals scored:</td>
+                <td><input type="text" th:field="*{homegoal}" /></td>
+            </tr>
+            <tr>
+                <td>Goals conceded:</td>
+                <td><input type="text" th:field="*{awaygoal}" /></td>
+            </tr>
+            <tr>
+                <td>Goals scored half:</td>
+                <td><input type="text" th:field="*{homegoalhalf}" /></td>
+            </tr>
+            <tr>
+                <td>Goals conceded half:</td>
+                <td><input type="text" th:field="*{awaygoalhalf}" /></td>
+            </tr>
+            <tr>
+                <td>created tips:</td>
+                <td><input type="text" th:field="*{created}"  readonly="readonly" disabled/></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="submit">Save</button> </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="common/header :: header"></div>
+</head>
+<body>
+<div th:replace="common/navbar :: navbar"></div>
+<div align="center">
+    <h1>Team List</h1>
+
+    <br/><br/>
+    <table border="1" cellpadding="10">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>ID league</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="team : ${teamList}">
+            <td th:text="${team.id}">Product ID</td>
+            <td th:text="${team.name}">Name</td>
+            <td th:text="${team.id_league}">Brand</td>
+
+            <td>
+                <a th:href="@{'/admin/list_tips/' + ${team.id}}">Show tips</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

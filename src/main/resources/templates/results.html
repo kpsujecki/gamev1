@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="common/header :: header"></div>
+</head>
+<body>
+<div th:replace="common/navbar :: navbar"></div>
+<div align="center">
+    <h1>Results table</h1>
+
+    <br/><br/>
+    <table border="1" cellpadding="10">
+        <thead>
+        <tr>
+            <th>Rank</th>
+            <th>NAME</a></th>
+            <th>ID league</th>
+            <th><a th:href="@{'/results/' + ${currentPage} + '?sortField=points&sortDir=' + ${reverseSortDir}}">POINTS</a></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="teams, stat : ${teamList}">
+            <td th:text="${stat.index+1}">Miejsce</td>
+            <td th:text="${teams.team.name}">Name</td>
+            <td th:text="${teams.team.id_league}">ID league</td>
+            <td th:text="${teams.points}">Point</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

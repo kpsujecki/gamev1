@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="common/header :: header"></div>
+</head>
+<body>
+<div th:replace="common/navbar :: navbar"></div>
+<div align="center">
+    <h1>Welcome to Admin Panel!</h1>
+    <a href="/admin/add">Create New Team</a>
+    <br/>
+    <a href="/admin/search">Get tips from Twitter</a>
+    <br/>
+    <a href="/admin/check_tips">Check tips and add points</a>
+    <br/>
+    <a href="/admin/team_point">Update points for teams</a>
+    <br/>
+    <a href="/admin/new_season">Start a new season</a>
+    <br/>
+    <a href="/admin/team">Show Team list for Admin</a>
+    <br/>
+    <a href="/admin/tip">Show Tip list for Admin</a>
+    <br/>
+</div>
+</body>
+</html>

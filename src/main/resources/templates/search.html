@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="common/header :: header"></div>
+</head>
+<body>
+
+<div th:replace="common/navbar :: navbar"></div>
+<div align="center">
+    <h1>Create New Team</h1>
+    <br />
+    <form action="#" th:action="@{/admin/search_tip}"
+          method="post">
+
+        <table border="0" cellpadding="10">
+            <tr>
+                <td>Match hastag:</td>
+                <td><input type="text" name="match" /></td>
+            </tr>
+            <tr>
+                <td>Day of the match:</td>
+                <td><input type="text" name="data" /></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="submit">Save</button> </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>
